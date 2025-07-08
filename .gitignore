@@ -93,3 +93,6 @@ Thumbs.db
 
 # Project-specific
 agent_archivist/__pycache__/
+
+# Chroma vector database
+chroma_db/
