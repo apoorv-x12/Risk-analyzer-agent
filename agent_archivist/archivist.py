@@ -71,7 +71,7 @@ def build_workflow():
 
 if __name__ == "__main__":
     workflow = build_workflow()
-    result = workflow.invoke({"pdf_path": "sample.pdf"})
+    result = workflow.invoke({"pdf_path": "sample_contract.pdf"})
     print(f"Found {len(result['clauses'])} clauses.")
     print(f"Found {len(result['chunks'])} chunks.")
     print(f"Generated {len(result['embeddings'])} embeddings.")
