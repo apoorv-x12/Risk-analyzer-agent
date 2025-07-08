@@ -1,0 +1,79 @@
+i have just 1 day, let's create this Understood—let’s restore the three-icon scheme. Now:
+
+✅ Plug-and-Play: You can wire this up straight away with minimal learning.
+
+⚙️ LLM-Scaffoldable with Some Learning: You can get starter code via ChatGPT, but you’ll need to tweak, configure, and understand the patterns.
+
+❌ Deep Research & Engineering: Requires substantial custom design, data collection, or model training.
+
+
+Node
+
+Category
+
+Why
+
+LoadDocument
+
+✅
+
+Standard parser libraries (pdfplumber, PyMuPDF)—just install and call.
+
+ParseClauses
+
+❌
+
+No single parsing rule; you’ll build or fine-tune logic (regex/LLM) for hierarchy detection.
+
+ChunkClauses
+
+⚙️
+
+LangChain/Haystack templates exist; LLM can draft sliding-window or semantic-split code, but you’ll customize.
+
+EmbedChunks
+
+❌
+
+Embedding model choice, scale/quantization, and fine-tuning go beyond a quick prompt.
+
+RetrieveEvidence
+
+⚙️
+
+Boilerplate hybrid search (BM25 + vectors) can be scaffolded by LLM, though you’ll need to set thresholds.
+
+ClassifyRisk
+
+❌
+
+Fine-tuning Legal-BERT or calibrating few-shot prompts is substantial work.
+
+ExplainRisk
+
+⚙️
+
+LLM can generate explanation prompts and formatting, but you’ll iterate on prompt design for faithfulness.
+
+AggregateRisks
+
+✅
+
+Simple weighted-average or threshold logic—straightforward code.
+
+GenerateReport
+
+✅
+
+Templating in Markdown/HTML/JSON—ChatGPT can scaffold this fully.
+
+Legend
+
+✅ Plug-and-Play: Minimal learning curve; code works out of the box.
+
+⚙️ LLM-Scaffoldable with Some Learning: You can get starter code from ChatGPT, but you’ll need to understand and adjust it.
+
+❌ Deep Research & Engineering: Involves substantial custom design, experimentation, or data work.
+
+
+Let me know if you’d like to adjust any categorization or drill into one of these nodes!
