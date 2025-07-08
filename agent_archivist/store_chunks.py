@@ -1,5 +1,4 @@
 import chromadb
-from chromadb.config import Settings
 from chromadb import PersistentClient
 from typing import List, Any
 
@@ -10,7 +9,6 @@ def store_chunks(chunks: List[str], embeddings: List[Any], collection_name: str 
     """
     client = PersistentClient(path="chroma_db")  # use PersistentClient for disk storage
     collection = client.get_or_create_collection(name=collection_name)
-    
     for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
         collection.add(
             ids=[f"chunk_{i}"],
@@ -18,7 +16,6 @@ def store_chunks(chunks: List[str], embeddings: List[Any], collection_name: str 
             documents=[chunk],
             metadatas=[{"order": i}]
         )
-    
     print(f"Stored {len(chunks)} chunks in Chroma.")
     return collection
 
@@ -37,11 +34,14 @@ def query_chunks(query: str, collection_name: str = "clauses", n_results: int = 
     return results
 
 if __name__ == "__main__":
+    # Demo: Store sample chunks and embeddings
+    chunks = ["First clause text here.", "Second clause text here."]
+    embeddings = [[0.0]*384, [0.1]*384]  # Dummy embeddings for demo
+    store_chunks(chunks, embeddings)
 
     # Demo: Query the collection
     query = "First clause text here."
     results = query_chunks(query, n_results=2)
-    print(results,'hi')
     print("Query results:")
     for doc, dist, meta in zip(results["documents"][0], results["distances"][0], results["metadatas"][0]):
         print(f"Text: {doc}\nDistance: {dist}\nMetadata: {meta}\n")
