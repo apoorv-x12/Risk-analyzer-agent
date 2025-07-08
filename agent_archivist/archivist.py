@@ -5,7 +5,7 @@ from .parse_clauses import parse_clauses
 from .chunk_clauses import chunk_clauses
 from .embed_chunks import embed_chunks
 from .store_chunks import store_chunks
-from .risk_analysis import analyze_risk_flan_t5
+from .risk_analysis import analyze_risk_mistral_ollama
 from .generate_report import generate_report
 import os
 
@@ -40,7 +40,7 @@ def store_chunks_node(state: PipelineState):
     return {"chroma_collection": collection}
 
 def risk_analysis_node(state: PipelineState):
-    risk_results = analyze_risk_flan_t5(state["clauses"])
+    risk_results = analyze_risk_mistral_ollama(state["clauses"])
     return {"risk_results": risk_results}
 
 def generate_report_node(state: PipelineState):
